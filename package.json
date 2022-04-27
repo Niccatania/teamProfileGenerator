@@ -1,0 +1,23 @@
+{
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "An application that allows you to setup a teamprofile using node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niccatania/teamProfileGenerator.git"
+  },
+  "author": "Nic Catania",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niccatania/teamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/Niccatania/teamProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2",
+    "jest": "^28.0.0"
+  }
+}
