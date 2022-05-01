@@ -4,34 +4,36 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern= require('./lib/Intern');
+const makeCards= require("./dist/renderFrom.js")
 
 const team= []
+
 
 inquirer
 .prompt([
     {
     type: "input",
-      name: "manName",
+      name: "Name",
       message: "Manager name:",
     },
     {
       type: "input",
-      name: "manID",
+      name: "ID",
       message: "ID:",},
       {
      
       type: "input",
-      name: "manEmail",
+      name: "Email",
       message: "Email:",
       },
       {
       type: "input",
-      name: "manNum",
+      name: "Num",
       message: "Manager office number:",
 
       }])
       .then(function(answers){
-        let manager=new Manager(answers.manName, answers.manID, answers.manEmail, answers.manNum)
+        let manager=new Manager(answers.Name, answers.ID, answers.Email, answers.Num)
         team.push(manager)
      console.log(manager);
       nextUp()
@@ -115,14 +117,16 @@ inquirer
     },
     {
     type: "input",
-    name: "school",
+    name: "School",
     message: "What is the Intern's School?:"
 
 }
 ])
 .then(function(answers){
-  let intern=new Intern(answers.Name, answers.ID, answers.Email, answers.school)
+  let intern=new Intern(answers.Name, answers.ID, answers.Email, answers.School)
+
   team.push(intern)
+  
 console.log(intern)
 nextUp();
 });
@@ -130,4 +134,11 @@ nextUp();
 
 function endProcess(){
   console.log(team);
+  fs.writeFileSync(
+    "./index.html",
+    makeCards(team),"utf-8"
+  );
+  
+  // fs.writeFile("index.html",htmlPage(team))
+  // console.log("Successfully created index.html!")
 }
