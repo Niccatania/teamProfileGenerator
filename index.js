@@ -5,40 +5,6 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern= require('./lib/Intern');
 
-
-const generateHTML =(data) =>`<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>My Team</title>
-</head>
-<body>
-    <nav class="navbar navbar-light bg-light ">
-        <div class="container-fluid  justify-content-center ">
-          <span class="navbar-brandtext-center mb-0 h1  ">My Team</span>
-        </div>
-      </nav>
-
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Placeholder</h5>
-          <p class="card-text">This object will need to be created using JS</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">ID: ${data.ID} </li>
-          <li class="list-group-item">Email: #{data.Email}</li>
-          <li class="list-group-item">Github User: github.com/${data.User} </li>
-        </ul>
-       
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</html>
-`
-;
 const team= []
 
 inquirer
@@ -89,7 +55,7 @@ choices: ["Engineer","Intern","teamComplete"],
               internChosen();
             }
             else{
-              generateFile();
+              endProcess();
             }
     });
   }
@@ -121,7 +87,7 @@ inquirer
 }
 ])
 .then(function(answers){
-  let engineer= new Engineer(answers.Name, answers.ID, answers.Email, answers.Num, answers.githubUser)
+  let engineer= new Engineer(answers.Name, answers.ID, answers.Email, answers.githubUser)
   team.push(engineer)
 console.log(engineer)
 nextUp();
@@ -155,15 +121,13 @@ inquirer
 }
 ])
 .then(function(answers){
-  let intern=new Intern(answers.Name, answers.ID, answers.Email, answers.Num, answers.school)
+  let intern=new Intern(answers.Name, answers.ID, answers.Email, answers.school)
   team.push(intern)
 console.log(intern)
 nextUp();
 });
 }
 
-
-function generateFile(){
-  fs.writeFileSync(generateHTML,team)
+function endProcess(){
+  console.log(team);
 }
-
