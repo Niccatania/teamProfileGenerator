@@ -1,12 +1,7 @@
-const EmployeeTest = require(".lib/Employee");
-const Employee = require("../lib/Employee");
+const Employee = require('/Users/niccatania/Desktop/bootcamp/teamProfileGenerator/lib/Employee.js');
 
-describe("Employee",() => {
-    
-})
-
-
-it("should return an employee name", () => {
-   var nic = new Employee()
-  });
-  return this.name;
+test("We should return an Id number", () => {
+    const employ= new Employee("klein", 45, "klein@gmail.com",123);
+        expect(employ.name).toBe("klein");
+        
+});

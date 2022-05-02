@@ -139,6 +139,4 @@ function endProcess(){
     makeCards(team),"utf-8"
   );
   
-  // fs.writeFile("index.html",htmlPage(team))
-  // console.log("Successfully created index.html!")
 }

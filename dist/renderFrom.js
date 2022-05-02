@@ -1,50 +1,67 @@
-// const Manager = require("../lib/Manager");
 
-// // const Manager = require('./lib/Manager');
 const makeCards=(teamCard) => {
   
   const callTheManager=(manager) =>{
     return`
+    <div class="col-12 col-md-6 col-lg-4">
     <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"> ${manager.Name} </h5>
+    <div class="card-header bg-info ">
+      <h5 class="card-title">${manager.name} </h5>
+      <h6>Manager</h6>
     </div>
+    <div class= card-body>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID: ${manager.ID} </li>
-      <li class="list-group-item">Email: ${manager.Email}</li>
-      <li class="list-group-item">Office Number: ${manager.Num} </li>
+      <li class="list-group-item">ID:${manager.id} </li>
+      <li class="list-group-item">Email:${manager.email}</li>
+      <li class="list-group-item">Office Number:${manager.officeNumber} </li>
     </ul>
+    </div>
+    </div>
+    </div>
    `;
 
   };
 
   const whereMyEngineer = (engineer) => {
     return`
+    <div class="col-12 col-md-6 col-lg-4">
     <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">${engineer.Name}</h5>
-        <h4></h4>
+    <div class="card-header bg-info">
+      <h5 class="card-title">${engineer.name}</h5>
+      <h6>Engineer</h6>
     </div>
+    <div class="card-body">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID: ${engineer.ID} </li>
-      <li class="list-group-item">Email: ${engineer.Email}</li>
+      <li class="list-group-item">ID: ${engineer.id} </li>
+      <li class="list-group-item">Email:${engineer.email} </li>
       <li class="list-group-item">Github User: github.com/${engineer.githubUser} </li>
     </ul>
+
+    </div>
+    </div>
+    </div>
 `
   }
 
 const weNeedIntern =(intern) =>{
   return`
+  <div class="col-12 col-md-6 col-lg-4">
   <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">${intern.Name}</h5>
-      <h4></h4>
+  <div class="card-header bg-info">
+  
+    <h5 class="card-title">${intern.name}</h5>
+    <h6>Intern</h6>
+      
   </div>
+  <div class="card-body">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">ID: ${intern.ID} </li>
-    <li class="list-group-item">Email: ${intern.Email}</li>
-    <li class="list-group-item">School: ${intern.School} </li>
+    <li class="list-group-item">ID: ${intern.id} </li>
+    <li class="list-group-item">Email: ${intern.email}</li>
+    <li class="list-group-item">School: ${intern.school} </li>
   </ul>
+  </div>
+  </div>
+  </div>
   `
 };
 
@@ -82,15 +99,19 @@ return`
     <title>My Team</title>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light ">
+    <nav class="navbar navbar-light bg-primary ">
         <div class="container-fluid  justify-content-center ">
           <span class="navbar-brandtext-center mb-0 h1  ">My Team</span>
         </div>
       </nav>
 
 <div>
+<div class="container">
+<div class="row">
 ${makeCards(teamCard)}
-<div>
+</div>
+</div>
+</div>
   
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
