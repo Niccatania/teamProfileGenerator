@@ -5,7 +5,7 @@
   ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Demonstration Video link
-  ![Demonstration video!]()
+  ![Demonstration video!](https://youtu.be/k4AC5pZsnoM)
 
 
   ### Table of Contents  
@@ -31,10 +31,13 @@ This application will generate a website with a collection of cards showcasing y
 ## Installation:
 Download code. Run npm I to install the dependencies. 
 ## Usage:
+![Commandline!](./src/command.png)
+![HTMLpage!](./src/cards.png)
 This project uses HTML, Javascript, Node.js, inquirer NPM, and jest for testing
 ## Contributors:
 Nic Catania
 ## Tests:
+![Tests!](./src/test.png)
 Jest 
 ## License
 This project uses the MIT license.

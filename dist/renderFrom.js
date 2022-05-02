@@ -12,7 +12,7 @@ const makeCards=(teamCard) => {
     <div class= card-body>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID:${manager.id} </li>
-      <li class="list-group-item">Email:${manager.email}</li>
+      <li class="list-group-item">Email: <a href="mailto:">${manager.email}</a></li>
       <li class="list-group-item">Office Number:${manager.officeNumber} </li>
     </ul>
     </div>
@@ -33,8 +33,8 @@ const makeCards=(teamCard) => {
     <div class="card-body">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${engineer.id} </li>
-      <li class="list-group-item">Email:${engineer.email} </li>
-      <li class="list-group-item">Github User: github.com/${engineer.githubUser} </li>
+      <li class="list-group-item">Email: <a href="mailto:">${engineer.email}</a> </li>
+      <li class="list-group-item">Github User: <a href="https://github.com/${engineer.githubUser}">${engineer.githubUser}</a> </li>
     </ul>
 
     </div>
@@ -56,7 +56,7 @@ const weNeedIntern =(intern) =>{
   <div class="card-body">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${intern.id} </li>
-    <li class="list-group-item">Email: ${intern.email}</li>
+    <li class="list-group-item"> <a href="mailto:">${intern.email}</a></li>
     <li class="list-group-item">School: ${intern.school} </li>
   </ul>
   </div>
@@ -105,7 +105,7 @@ return`
         </div>
       </nav>
 
-<div>
+<div class="pt-5">
 <div class="container">
 <div class="row">
 ${makeCards(teamCard)}
